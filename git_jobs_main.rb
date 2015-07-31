@@ -1,24 +1,30 @@
 require 'httparty'
 require './cities.rb'
 
-san_francisco = City.new("sf","c")
-puts "San Francisco\n"
-puts "there are #{san_francisco.job_num} jobs available in SF"
-puts "--Ruby"
-puts "--Java"
-puts "--C"
-puts "--C++"
-puts "--Python"
-puts "--Javascript"
-puts "--Ruby"
-puts san_francisco.job_num
 
-# boston = City.new("boston")
-# puts "Boston\n"
-# puts "there are #{boston.job_num} jobs available in SF"
-# puts "--Ruby"
-# puts boston.job_num
-#
+# think of putting a loop in here. would save some space, code spelly as is
+language_array = ["ruby","java", "c", "c++", "python", "javascript"]
+
+language_array.each do |x|
+  san_francisco = City.new("sf",x)
+  puts " There are #{san_francisco.job_num} #{x.capitalize} jobs in San Francisco "
+end
+
+puts "-" * 50
+puts "\n"
+
+language_array.each do |x|
+  boston = City.new("boston",x)
+  puts " There are #{boston.job_num} #{x.capitalize} jobs in Boston "
+end
+
+puts "-" * 50
+puts "\n"
+
+language_array.each do |x|
+  boston = City.new("la",x)
+  puts " There are #{la.job_num} #{x.capitalize} jobs in Los Angeles"
+end
 # la = City.new("la")
 # puts "Los Angeles\n"
 # puts "there are #{la.job_num} jobs available in SF"
