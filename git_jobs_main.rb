@@ -1,9 +1,15 @@
 require 'httparty'
 require './cities.rb'
 
-san_francisco = City.new("sf")
+san_francisco = City.new("sf","c")
 puts "San Francisco\n"
 puts "there are #{san_francisco.job_num} jobs available in SF"
+puts "--Ruby"
+puts "--Java"
+puts "--C"
+puts "--C++"
+puts "--Python"
+puts "--Javascript"
 puts "--Ruby"
 puts san_francisco.job_num
 
