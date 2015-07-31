@@ -2,21 +2,16 @@ require 'minitest'
 require 'minitest/autorun'
 require 'minitest/pride'
 require './cities.rb'
+require './git_jobs_main.rb'
 require 'httparty'
-# require 'faker'
 require 'json'
-# require './current_conditions.rb'
-# require './sun_up_down.rb'
-# require './ten_day_forecast.rb'
-# require './alerts.rb'
-# require './hurricanes.rb'
+
 
 class City
   private def get_data
     JSON.parse(File.open("cities.json").read)
   end
 end
-
 
 
 class ApplicationTest < Minitest::Test
@@ -35,4 +30,10 @@ class ApplicationTest < Minitest::Test
     city = City.new("SF")
     assert_equal 50, city.job_num
   end
+
+  def test_get_percentage_of_jobs
+    
+  end
+
+
 end
