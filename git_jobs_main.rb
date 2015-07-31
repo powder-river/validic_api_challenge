@@ -2,4 +2,6 @@ require 'httparty'
 require './cities.rb'
 
 city = City.new
-puts city.city_name
+puts "San Francisco\n"
+puts "--Python"
+puts "--Ruby"

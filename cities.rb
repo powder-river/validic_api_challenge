@@ -8,7 +8,12 @@ class City
     @job_data[0]["location"]
   end
 
+  def job_num
+    number_of_jobs = @job_data.map{|x|x["title"]}
+    number_of_jobs.count
+  end
+
   private def get_data
-    HTTParty.get("https://jobs.github.com/positions.json?location=94101&full_time=true")
+    HTTParty.get("https://jobs.github.com/positions.json?location=82009&full_time=true")
   end
 end

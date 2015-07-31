@@ -11,7 +11,7 @@ require 'json'
 # require './alerts.rb'
 # require './hurricanes.rb'
 
-class SunRiseSet
+class City
   private def get_data
     JSON.parse(File.open("cities.json").read)
   end
@@ -29,5 +29,10 @@ class ApplicationTest < Minitest::Test
   def test_display_job_location
      city = City.new
      assert_equal "San Francisco", city.city_name
+  end
+
+  def test_get_number_of_jobs
+    city = City.new
+    assert_equal 5, city.job_num
   end
 end
