@@ -1,6 +1,8 @@
 require 'httparty'
 class City
-  def initialize
+  attr_reader :city
+  def initialize(city)
+    @city = city
     @job_data = get_data
   end
 
@@ -14,6 +16,6 @@ class City
   end
 
   private def get_data
-    HTTParty.get("https://jobs.github.com/positions.json?location=82009&full_time=true")
+    HTTParty.get("https://jobs.github.com/positions.json?location=#{city}&full_time=true")
   end
 end
